@@ -27,9 +27,7 @@ This stack class able to be used as follows:
 var stack = new Stack();
 
 stack.Push(1);
-
 stack.Push(2);
-
 stack.Push(3);
 
 Console.WriteLine(stack.Pop());
@@ -40,4 +38,5 @@ The output of this program will be
 3
 2
 1
+
 
