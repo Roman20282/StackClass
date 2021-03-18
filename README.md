@@ -4,6 +4,8 @@ Class Stack and programm that use it.
 A Stack is a data structure for storing a list of elements in a LIFO 
 (last in, first out) fashion. Designed a class called Stack with three methods. 
 
+
+
 void Push(object obj)
 
 object Pop()
