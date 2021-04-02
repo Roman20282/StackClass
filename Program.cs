@@ -20,7 +20,7 @@ namespace Stack
                 Console.WriteLine("                 2) Pop objects from Stack                        ");
                 Console.WriteLine("                 3) Clear Stack                                   ");
                 Console.WriteLine("                 4) Peek last object                              ");
-                Console.WriteLine("                 5) Is it stack conteins item?                    ");
+                Console.WriteLine("                 5) Find object in stack                    ");
                 Console.WriteLine("                 6) End program.                                  ");
                 Console.WriteLine("==================================================================");
                 Console.Write(" Make your choice    :   "); ch = Console.ReadLine();
