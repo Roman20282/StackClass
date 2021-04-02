@@ -10,6 +10,10 @@ void Push(object obj)
 
 object Pop()
 
+object Peek()
+
+void Peek(object x)
+
 void Clear()
 
 -------------------------------
