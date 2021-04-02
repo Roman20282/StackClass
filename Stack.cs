@@ -25,25 +25,49 @@ namespace Stack
         }
         public object Pop()
         {
-            if (ElementCount >= 1)                     
+           if (list.Count >= 1)            
             {
-                x = list[ElementCount-1];
-                list[ElementCount - 1] = null;
+                x = list[list.Count - 1];
+                list.RemoveAt(list.Count-1);
                 ElementCount--;
                 return x;
             }
-            else
+           else 
             {
-                Console.WriteLine("InvalidOperationException: Stack empty.  Error: ");
+                Console.Write("InvalidOperationException: Stack empty!  Error: ");
                 return -1;
             }
+        }
+
+        public object Peek()
+        {
+            if (list.Count > 0)
+                return Convert.ToString(list[list.Count - 1]);
+            else
+            {
+                Console.Write("InvalidOperationException: Stack empty!  Error: ");
+                return -1;
+            }
+        }
+
+        public void Peek(object x)
+        {
+            if ((list.Count > 0)&(list.Contains(x)))
+            {
+                Console.WriteLine("Element {0} is in stack. Index of this element: {1}", x, list.IndexOf(x));
+            }
+            else if ((list.Count > 0) & (!list.Contains(x)))
+            {
+                Console.Write("Element {0} in stack is absent", x);
+            }
+            else Console.WriteLine("InvalidOperationException: Stack empty! Error:  -1 ");
+            
         }
 
         public void Clear()
         {
             list.Clear();
             ElementCount = 0;
-
         }
     }
 }
