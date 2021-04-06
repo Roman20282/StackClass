@@ -14,10 +14,6 @@ namespace Stack
             {
                 return list.Count;
             }
-            private set
-            {
-                ElementCount = list.Count;
-            }
         }
         public void Push(object obj)
         {
