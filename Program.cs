@@ -73,7 +73,6 @@ namespace Stack
                         {
                             Console.WriteLine("Input an element to check if it is on the stack");
                             Console.Write("x = "); object e = Console.ReadLine();
-                            //int i;
                             if (stack.Peek(e))
                                 Console.WriteLine("Element {0} is in stack. Index of this element: {1}", e, stack.ElementIndex);
                             else Console.Write("Element {0} in stack is absent", e);
