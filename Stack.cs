@@ -7,7 +7,18 @@ namespace Stack
     {
         object x;
         ArrayList list = new ArrayList();
-        public int ElementCount { get; private set; }
+        public int ElementIndex { get; private set; }
+        public int ElementCount
+        {
+            get
+            {
+                return list.Count;
+            }
+            private set
+            {
+                ElementCount = list.Count;
+            }
+        }
 
 
         public void Push(object obj)
@@ -15,59 +26,46 @@ namespace Stack
             if (obj != null)
             {
                 list.Add(obj);
-                ElementCount++;
             }
-            else
-            {
-                Console.WriteLine("InvalidOperationException: object can't be null. Element not added. Error:  -1 ");
-            }
-                
         }
         public object Pop()
         {
            if (list.Count >= 1)            
-            {
-                x = list[list.Count - 1];
-                list.RemoveAt(list.Count-1);
-                ElementCount--;
-                return x;
-            }
-           else 
-            {
-                Console.Write("InvalidOperationException: Stack empty!  Error: ");
-                return -1;
-            }
+           {
+               x = list[list.Count - 1];
+               list.RemoveAt(list.Count-1);
+               return x;
+           }
+           return null;
         }
 
         public object Peek()
         {
             if (list.Count > 0)
                 return Convert.ToString(list[list.Count - 1]);
-            else
-            {
-                Console.Write("InvalidOperationException: Stack empty!  Error: ");
-                return -1;
-            }
+            return null;
         }
 
-        public void Peek(object x)
+        public bool Peek(object x)
         {
-            if ((list.Count > 0)&(list.Contains(x)))
+            if ((list.Count > 0) & (list.Contains(x)))
             {
-                Console.WriteLine("Element {0} is in stack. Index of this element: {1}", x, list.IndexOf(x));
+                ElementIndex = list.IndexOf(x);
+                return true; 
             }
-            else if ((list.Count > 0) & (!list.Contains(x)))
+            if ((list.Count > 0) & (!list.Contains(x)))
             {
-                Console.Write("Element {0} in stack is absent", x);
+                return false;
             }
-            else Console.WriteLine("InvalidOperationException: Stack empty! Error:  -1 ");
-            
+            else throw new InvalidOperationException();
         }
 
         public void Clear()
         {
             list.Clear();
-            ElementCount = 0;
         }
     }
 }
+
+
+

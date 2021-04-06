@@ -10,8 +10,8 @@ namespace Stack
             var stack = new Stack();
             
             string ch;
-            bool Eexit = false;
-            while (!Eexit)
+            bool Exit = false;
+            while (!Exit)
             {
                 Console.Clear();
                 Console.WriteLine("****************Program using class Stack().**********************");
@@ -20,11 +20,11 @@ namespace Stack
                 Console.WriteLine("                 2) Pop objects from Stack                        ");
                 Console.WriteLine("                 3) Clear Stack                                   ");
                 Console.WriteLine("                 4) Peek last object                              ");
-                Console.WriteLine("                 5) Find object in stack                    ");
+                Console.WriteLine("                 5) Find object in stack                          ");
                 Console.WriteLine("                 6) End program.                                  ");
                 Console.WriteLine("==================================================================");
                 Console.Write(" Make your choice    :   "); ch = Console.ReadLine();
-                if (ch == "6") Eexit = true;
+                if (ch == "6") Exit = true;
                 else
                 {
                     if (ch == "1")
@@ -73,7 +73,10 @@ namespace Stack
                         {
                             Console.WriteLine("Input an element to check if it is on the stack");
                             Console.Write("x = "); object e = Console.ReadLine();
-                            stack.Peek(e);
+                            //int i;
+                            if (stack.Peek(e))
+                                Console.WriteLine("Element {0} is in stack. Index of this element: {1}", e, stack.ElementIndex);
+                            else Console.Write("Element {0} in stack is absent", e);
                         }
                         
                     }
