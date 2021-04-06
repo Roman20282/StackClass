@@ -19,8 +19,6 @@ namespace Stack
                 ElementCount = list.Count;
             }
         }
-
-
         public void Push(object obj)
         {
             if (obj != null)
